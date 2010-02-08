@@ -1,17 +1,29 @@
-= pedantic
+h1. Pedantic
 
-Description goes here.
+Pedantic cleans strings of text - stripping out unimportant words and URLs, fixing typos, replacing symbols (like emoticons) with real words, and running the results through a stemmer.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+In short - it gives you reliable text to process (but not read).
 
-== Copyright
+And if the name didn't give it away, yes this library is opinionated.
 
-Copyright (c) 2010 Pat Allan. See LICENSE for details.
+h2. Installation
+
+Grab the gem.
+
+<pre><code>gem install pedantic</code></pre>
+
+h2. Usage
+
+<pre><code>Pedantic.fix('my messy string ;)') #=> 'messi string joke'</code></pre>
+
+Note that the stemmer generates imperfect words, but it is reasonably reliable and constant in the output, so you can work with those assumptions in the output.
+
+Also - this library is a work in progress - currently I've aimed for a relatively useful but extremely basic implementation. If you look through the code, you'll see there's few typos and emoticons handled. It's easy enough to extend, though - so please, fork, patch and send a pull request.
+
+h2. Contributing
+
+Fork and patch as you see fit - and please send me a pull request if you think it's useful for others. Don't forget to write specs first, and don't mess with the version numbers please (or at least: only do so in a different branch).
+
+h2. Copyright
+
+Copyright (c) 2010 "Pat Allan":http://freelancing-gods.com, but released under an open licence. Go for your life.

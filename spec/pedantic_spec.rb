@@ -1,7 +1,17 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'spec/spec_helper'
 
-describe "Pedantic" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+describe Pedantic do
+  describe '.fix' do
+    it "removes leading and trailing spaces" do
+      Pedantic.fix(' foo ').should == 'foo'
+    end
+    
+    it "replaces multiple spaces with a single space" do
+      Pedantic.fix('foo   bar').should == 'foo bar'
+    end
+    
+    it "replaces new lines with spaces" do
+      Pedantic.fix("foo\nbar").should == 'foo bar'
+    end
   end
 end
