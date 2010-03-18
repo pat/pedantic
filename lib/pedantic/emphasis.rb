@@ -8,7 +8,8 @@ module Pedantic::Emphasis
       /\bso+\b/        => 'so',
       /\bre+a+ll+y\b/i => 'really',
       /\boka+y\b/i     => 'okay',
-      /\boo+h/i        => 'ooh'
+      /\boo+h\b/i      => 'ooh',
+      /\bthe shit\b/i  => 'fantastic'
     }.each { |pattern, replacement|
       string.gsub!(pattern, replacement)
     }

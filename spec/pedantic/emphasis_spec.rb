@@ -12,4 +12,8 @@ describe Pedantic::Emphasis do
   it "replaces oooooh with ooh" do
     Pedantic.fix('OoOoOoh').should == 'ooh'
   end
+  
+  it "replaces the shit with fantastic" do
+    Pedantic.fix('the shit').should == 'fantast'
+  end
 end
